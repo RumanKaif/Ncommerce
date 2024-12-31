@@ -1,0 +1,15 @@
+pool: Default
+  
+trigger: none
+  
+pr:
+  branches:
+    include:
+      - develop
+  
+steps:
+  - template: dotnetcore/dotnetcore-build.yaml@resuabePublicAssets
+    parameters:
+      mainproject: ${{ parameters.mainproject }}
+      testproject: ${{ parameters.testproject }}
+      runTests: false

@@ -1,0 +1,23 @@
+pool: Default
+  
+trigger: none
+  
+pr:
+  branches:
+    include:
+      - develop
+  
+resources:
+  repositories:
+    - repository: resuabePublicAssets
+      type: github
+      name: RumanKaif/nopCommerce      
+      ref: 'refs/heads/main'
+      endpoint: 'github.com_RumanKaif'
+
+steps:
+  - template: dotnetcore/dotnetcore-build.yaml@resuabePublicAssets
+    parameters:
+      mainproject: 'src/Presentation/Nop.Web/Nop.Web.csproj'
+      testproject: 'src/Test/Nop.Tests/Nop.Tests.csproj'
+      runTests: false
