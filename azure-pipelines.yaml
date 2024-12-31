@@ -11,7 +11,7 @@ resources:
   repositories:
     - repository: resuabePublicAssets
       type: github
-      name: RumanKaif/nopCommerce      
+      name: RumanKaif/Ncommerce     
       ref: 'refs/heads/main'
       endpoint: 'github.com_RumanKaif'
 
